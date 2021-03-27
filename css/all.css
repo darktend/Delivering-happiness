@@ -1,0 +1,151 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fcf2f5;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heads__input {
+  position: relative;
+}
+
+.heads__input-controls {
+  width: 15rem;
+  height: 3rem;
+  padding: 0 66px 0 16px;
+  border: 3px solid #87213c;
+  border-radius: 26px;
+  background-color: #f9dde3;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 1.25rem;
+  color: #87213c;
+  caret-color: #ff2961;
+  transition: background-color 0.5s ease-in-out;
+  outline: none;
+  z-index: 5;
+  transform: translate(1rem, 0.625rem);
+}
+
+.heads__input-controls:focus {
+  border-color: #ff2961;
+}
+
+.heads__input-cloudy {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 150%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}
+
+.heads__input-lbl {
+  position: absolute;
+  top: -16%;
+  left: 13%;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #87213c;
+}
+
+.heads__button {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  height: 4rem;
+  width: 3rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  fill: #fff;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  outline: none;
+  color: #fff;
+}
+
+.heads__button-svg {
+  width: 40%;
+  overflow: visible;
+}
+
+.heads__button-svg-star {
+  fill: currentColor;
+  stroke: var(--star-stroke, transparent);
+  stroke-width: 3px;
+}
+
+.heads__button-svg-star:focus {
+  outline: none;
+  color: #ff2961;
+}
+
+.heads__button-svg-star:hover {
+  --star-stroke: #87213c;
+  transform: scale(1.2);
+  color: #fae798;
+}
+
+.animation {
+  z-index: 5;
+  width: 200px;
+}
+
+.animation .kirby-star {
+  stroke-width: 3px;
+  stroke: currentColor;
+  fill: #fae798;
+}
+
+.animation .kirby-star-split {
+  color: #87213c;
+}
+
+.animation .kirby-foot {
+  fill: #ff2961;
+}
+
+.animation .kirby-stroke {
+  stroke: #87213c;
+  stroke-width: 3px;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.animation .kirby-body {
+  fill: #f9dde3;
+}
+
+.animation .kirby-mouth-open-inner {
+  fill: #87213c;
+}
+
+.animation .kirby-mouth-open-tongue {
+  fill: #ff2961;
+}
+
+:root {
+  --black: #87213c;
+  --white: #fff;
+  --primary-color: #f9dde3;
+  --primary-color-tint: #fcf2f5;
+  --secondary-color: #ff2961;
+  --accent-color: #fae798;
+  --mail-color: #326dcc;
+  --star-color: #fae798;
+  --star-sparkly-color: #b8d7ff;
+}
