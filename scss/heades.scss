@@ -1,41 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 * {
   box-sizing: border-box;
 }
+
 body {
   background-color: #fcf2f5;
 }
+
 .container {
   height: 100vh;
   width: 100%;
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+}
+
+.body {
+  &__forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .heads {
   &__input {
     position: relative;
+
     &-controls {
-      width: 15rem;
-      height: 3rem;
+      width: 240px;
+      height: 48px;
       padding: 0 66px 0 16px;
       border: 3px solid #87213c;
       border-radius: 26px;
       // border-color:#ff2961 ;
       background-color: #f9dde3;
       font-family: "Fredoka One", sans-serif;
-      font-size: 1.25rem;
+      font-size: 20px;
       color: #87213c;
       caret-color: #ff2961;
       transition: background-color 0.5s ease-in-out;
       outline: none;
       z-index: 5;
+
       &:focus {
         border-color: #ff2961;
       }
-      transform: translate(1rem, 0.625rem);
+
+      transform: translate(16px, 10px);
     }
+
     &-cloudy {
       position: absolute;
       top: 50%;
@@ -44,250 +59,99 @@ body {
       transform: translate(-50%, -50%);
       fill: #fff;
     }
-    &-lbl{
+
+    &-lbl {
       position: absolute;
-      top: -16%;
+      top: -6%;
       left: 13%;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
+      font-size: 10px;
+      letter-spacing: 0.8px;
       color: #87213c;
+      font-family: "Fredoka One", sans-serif;
     }
   }
-  
+
   &__button {
+    display: flex;
+   justify-content: center;
+   align-items: center;
     position: absolute;
-    top: 5px;
-    right: 0;
-    height: 4rem;
-    width: 3rem;
+    top: 8px;
+    right: -14px;
+    height: 50px;
+    width: 50px;
     padding: 0;
     border: 0;
     background-color: transparent;
-    fill: #fff;
+    color: #fff;
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    outline: none;
-    color: #fff;
-    &-svg {
+
+    &-star {
       width: 40%;
       overflow: visible;
-      &-star {
-        fill: currentColor;
-        stroke: var(--star-stroke, transparent);
-        stroke-width: 3px;
-        &:focus {
-          outline: none;
-          color: #ff2961;
+    }
+
+    &-svg {
+      fill: currentColor;
+      stroke: var(--star-stroke, transparent);
+      stroke-width: 3px;
+    }
+&:focus{
+  outline: none;
+  color: #ff2961;
+}
+    &:hover {
+      --star-stroke: #87213c;
+      transform: scale(1.2);
+      color: #fae798;
+    }
+  }
+}
+
+.animation {
+  z-index: 5;
+  width: 200px;
+
+  .kirby {
+    &-star {
+      stroke-width: 3px;
+      stroke: currentColor;
+      fill: #fae798;
+
+      &-split {
+        color: #87213c;
+      }
+    }
+
+    &-foot {
+      fill: #ff2961;
+    }
+
+    &-stroke {
+      stroke: #87213c;
+      stroke-width: 3px;
+      stroke-miterlimit: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    &-body {
+      fill: #f9dde3;
+    }
+
+    &-mouth {
+      &-open {
+        &-inner {
+          fill: #87213c;
         }
 
-        &:hover {
-          --star-stroke: #87213c;;
-          transform: scale(1.2);
-          color: #fae798;
+        &-tongue {
+          fill: #ff2961;
         }
       }
     }
   }
 }
-.animation{
-  z-index: 5;
-    width: 200px;
- .kirby{
-   &-star{
-    stroke-width: 3px;
-    stroke: currentColor;
-    fill: #fae798;
-    &-split{
-      color: #87213c;
-    }
-   }
-   &-foot{
-     fill: #ff2961;
-   }
-   &-stroke{
-    stroke: #87213c;
-    stroke-width: 3px;
-    stroke-miterlimit: 10;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-   }
-   &-body{
-     fill: #f9dde3;
-   }
-   &-mouth{
-     &-open{
-       &-inner{
-         fill: #87213c;
-       }
-       &-tongue{
-         fill: #ff2961;
-       }
-     }
-   }
-   
- }
-}
-
-$black: #87213c;
-$white: #fff;
-
-$primary-color: #f9dde3;
-$primary-color-tint: #fcf2f5;
-$secondary-color: #ff2961;
-$accent-color: #fae798;
-
-$mail-color: #326dcc;
-$star-sparkly-color: #b8d7ff;
-
-$primary-font: "Fredoka One", sans-serif;
-
-
-:root {
-  --black: #{$black};
-  --white: #{$white};
-  --primary-color: #{$primary-color};
-  --primary-color-tint: #{$primary-color-tint};
-  --secondary-color: #{$secondary-color};
-  --accent-color: #{$accent-color};
-  --mail-color: #{$mail-color};
-  --star-color: #{$accent-color};
-  --star-sparkly-color: #{$star-sparkly-color};
-}
-// * { box-sizing: border-box; }
-
-// body {
-// 	display: flex;
-// 	justify-content: center;
-// 	min-height: 100vh;
-// 	background-color: $primary-color-tint;
-// 	font-size: 16px;
-// 	line-height: 1;
-// 	font-family: $primary-font;
-// }
-
-// .container {
-// 	display: flex;
-// 	flex-direction:center;
-// 	justify-content: center;
-// 	align-items: center;
-// 	width: 100%;
-// 	max-width: 400px;
-
-// }
-
-// .emails {
-// 	position: absolute;
-// 	z-index: 5;
-// 	width: 17rem;
-// 	font-size: 1.25rem;
-// 	line-height: 1.5;
-// 	color: var(--black);
-// 	transform: translate(1rem, 0.625rem);
-// 	overflow: hidden;
-
-// 	&-letter {
-// 		display: inline-block;
-// 		transform-origin: center bottom;
-// 	}
-// }
-// .input__head{
-// 	position: relative;
-// }
-// .input__head-svg{
-// 	display: flex;
-// }
-
-// .cloudy-poofs{
-// 	position: absolute;
-// 	top: 5px;
-// }
-// .input-wrap {
-// 	position: relative;
-// }
-
-// .cloudy {
-// 	position: absolute;
-// 	top: 50%;
-// 	left: 50%;
-// 	width: 150%;
-// 	transform: translate(-50%, -50%);
-
-// 	&-poofs {
-// 		fill: var(--white);
-// 	}
-// }
-
-// .fade {
-// 	&-enter-active,
-// 	&-leave-active {
-// 		transition: 0.3s;
-// 	}
-
-// 	&-enter-from,
-// 	&-leave-to {
-// 		opacity: 0;
-// 	}
-// }
-
-// .dreamy-input {
-// 	--offset-top: 0.1875rem;
-// 	--offset-left: -0.125rem;
-// 	--control-height: 3.125rem;
-
-// 	position: relative;
-
-// 	&::after {
-// 		content: '';
-// 		position: absolute;
-// 		top: var(--offset-top);
-// 		left: var(--offset-left);
-// 		height: 93%;
-//     width: 100%;
-// 		border: 2px solid var(--black);
-// 		pointer-events: none;
-// 		transition: border 0.5s ease-in-out;
-// 		top: -2px;
-// 	}
-
-// 	&::after,
-// 	&-control {
-// 		border-radius: var(--control-height);
-// 	}
-
-// 	&-control {
-
-// 		width: 15.625rem;
-// 		height: var(--control-height);
-// 		padding: 0 calc(1rem + var(--control-height)) 1 2rem;
-// 		border: 0;
-// 		background-color: var(--primary-color);
-// 		font-family: $primary-font;
-// 		font-size: 1.25rem;
-// 		color: var(--black);
-// 		caret-color: var(--secondary-color);
-// 		transition: background-color 0.5s ease-in-out;
-
-// 		&:focus {
-// 			outline: none;
-// 		}
-
-// 		&:disabled {
-// 			background-color: var(--primary-color-tint);
-// 		}
-// 	}
-
-// 	&:focus-within {
-// 		&::after {
-// 			border-color: var(--secondary-color);
-// 		}
-// 	}
-
-// 	&-label,
-// 	&-error {
-// 		position: absolute;
-// 		left: 1rem;
-// 		font-size: 0.75rem;
-// 		letter-spacing: 0.05em;
-// 	}
 
